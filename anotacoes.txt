@@ -1,0 +1,148 @@
+---->> Arrays em JavaScript  <<----
+
+let frutas = ['Banana', 'Maça', 'Uva']
+
+
+.push() => Adiciona um item no final da lista.
+
+.pop() => Remove o ultimo registro de uma lista.
+
+.shift() => Remove o primeiro registro de uma lista.
+
+.unshift() => Insere um item no inicio da lista, e avança os outros registro para proxima casa.
+
+.length() => Conta quantos registro tem dentro da lista.
+
+.indexOf("Uva") => Retorna a posição do item da lista, caso não encontre ele retorna -1.
+
+
+## Arrays Bidimensionais ##
+
+let naves = [["Elemental", 7], ["Helmet", 13], ["Golias", 5], ["Supernova", 10]]
+
+// BUSCANDO ELEMENTOS DENTRO DE UM ARRAY BIDIMENSIONAL
+
+console.log(naves[0])
+
+retorna => ["Elemental, 7]
+
+console.log(naves[0][1])
+
+retorna => 7
+
+
+## METODOS SPLICE E SLICE EM ARRAYS ##
+
+
+---------- SPLICE -------------------- 
+
+let spaceshipNames = ["Elemental", "Darwin", "Arthemis", "Supernova"]
+
+deleteSpaceshipNames = spaceshipNames.splice(1, 2, "Demeter", "Puller", "Golias")
+
+console.log(deleteSpaceshipNames)
+
+retorna => ["Elemental", "Demeter", "Puller", "Golias", "Supernova"]
+
+
+
+--------------- SLICE --------------------
+
+let spaceshipNames = ["Elemental", "Darwin", "Arthemis", "Supernova"]
+
+let extractedNames = spaceshipNames.slice(1, 3)
+
+
+console.log(extractedNames)
+
+retorna => ["Darwin", "Arthemis"]
+
+
+## Iteração em Arrays ##
+
+----------- Metodo forEach ------------------
+
+// Roda um loop na lista mostrando o nome do elemento e o indice dele
+
+
+let hitchedSpacships =  ["Elemental", "Darwin", "Arthemis", "Supernova"]
+
+hitchedSpacships.forEach(function(currentSpaceship, index){
+    console.log("Nave: " + currentSpaceship + "\nIndice: " +index)
+})
+
+------------ Metodo Map ------------------------
+
+// Deixa todos os caracteres em toUpperCase
+
+
+let hitchedSpaceships =  ["Elemental", "Darwin", "Arthemis", "Supernova"]
+
+let upperSpacships = hitchedSpaceships.map(function(currentSpaceship, index){
+    let upcased = currentSpaceship.toUpperCase()
+    return upcased
+})
+
+console.log(upperSpacships)
+
+--------------- Metodo filter ---------------------
+
+// O metodo filter faz uma busca dentro de uma lista e de acordo com a condição ele retorna determinados itens de um Array
+
+let hitchedSpaceships =  ["Elemental", "Darwin", "Arthemis", "Supernova"]
+
+let with7Chars = hitchedSpaceships.filter(element =>{
+
+    return element.length >=7
+})
+
+console.log(with7Chars)
+
+retorna => elementos que tem caracteres >= 7
+
+
+---------------------- Metodo Find --------------------
+
+let hitchedSpaceships =  ["Elemental", "Darwin", "Arthemis", "Supernova"]
+
+let with7Chars = hitchedSpaceships.find(element =>{
+
+    return element.length >=7
+})
+
+console.log(with7Chars)
+
+retorna => o primeiro elemento que tem caracteres >= 7
+
+
+---->>   CLASSES E POO <<----
+
+class spacialStation{
+  constructor(name, quantity){
+    this.name = name
+    this.quantity = quantity
+    
+  }
+}
+
+let observatory = new spacialStation("GB", 40)
+
+console.log(observatory)
+
+
+// METODO constructor //
+
+
+class spacialStation{
+  constructor(name = "gb", quantity = 40){
+    this.name = name
+    this.quantity = quantity
+    
+  }
+}
+
+let observatory = new spacialStation()
+
+console.log(observatory)
+
+
